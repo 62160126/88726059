@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="form_reserve" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel Booking</title>
 </head>
 <body>
     <h3>Hotel Booking</h3>
-    <form method="POST" action="https://angsila.cs.buu.ac.th/~wittawas/632/88726059/lab02/afile.php"></form>
+    <form method="POST" action="https://angsila.cs.buu.ac.th/~wittawas/632/88726059/lab02/afile.php">
     <table>
         <tr>
             <td>
@@ -41,7 +41,8 @@
                 <label for="Name">Name</label>
             </td>
             <td>
-                <input type="text" name="fname" id="fname"> <input type="text" name="lname" id="lname">
+                <input type="text" name="fname" id="fname" size="21">
+                <input type="text" name="lname" id="lname" size="21">
             </td>    
         </tr>
         <tr>
@@ -49,7 +50,7 @@
                 <label for="Email">Email</label>
             </td>
             <td>
-                <input type="text" name="email" id="email">
+                <input type="text" name="email" id="email" size="48">
             </td>    
         </tr>
         <tr>
@@ -79,6 +80,26 @@
                 <input type="radio" name="pickup" id="pickup" value="No">No, I already rented a car.
             </td>
         </tr>
+        <tr>
+            <td>
+                <label for="flightnum">Flight Number</label>
+            </td>
+            <td>
+                <input type="text" name="flightnum" id="flightnum" size="48">
+            </td>
+        </tr>
+        <tr>
+            <td>Orther requests</td>
+                <td><Textarea name="ortherreq" id="ortherreq" rows="5" cols="50"></Textarea>
+        </tr>
+        <tr>
+            <th>
+            </th>
+            <td>
+                <input type="submit" value="Complete Reservation">
+            </td>
+        </tr>
     </table>
+    </form>
 </body>
 </html>
