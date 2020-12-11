@@ -49,6 +49,7 @@ table {
     width: 100%;
     background-color: rgb(161, 236, 167);
 }
+table tr:nth-child(even){background-color: rgb(193, 235, 197)}
 table td, table th {
     border: 5px solid #16a116;
     padding: 8px;
@@ -58,7 +59,6 @@ table th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: #62b971;
     color: #006419;
 }
 /* ------------------------------link------------------------------ */
