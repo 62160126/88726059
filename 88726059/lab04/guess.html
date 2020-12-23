@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    rn = Math.floor(Math.random()*10);
+
+    function guess(n) {
+        n = document.getElementById('number').value
+        
+        
+        if(n == rn){
+            document.getElementById("disp").innerHTML = "ถูกต้อง";
+            document.getElementById("hist").innerHTML += n+" "+"<br>";
+        }
+        else if(n < rn){
+            document.getElementById("disp").innerHTML = "น้อยไป";
+            document.getElementById("hist").innerHTML += n+" "+"<br>";
+        }
+        else if(n > rn){
+            document.getElementById("disp").innerHTML = "มากไป";
+            document.getElementById("hist").innerHTML += n+" "+"<br>";
+        }
+    }
+
+    function startover(){
+        rn = Math.floor(Math.random()*10);
+        div = document.getElementById('disp');
+        div.innerHTML = " ";
+        h = document.getElementById('hist');
+        h.innerHTML = " ";
+    }
+
+</script>
+<body>
+    <input type="text" id="number">
+    <button onclick="guess(this.value);" id="number">Guess</button>
+    <div id="disp"></div>
+    <h id="hist"></h><br>
+    <button onclick="startover()">Start Over</button>
+</body>
+</html>
