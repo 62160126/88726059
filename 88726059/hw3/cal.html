@@ -1,0 +1,25 @@
+<script>
+    function Calculate(n,f,l){
+        
+        div = document.getElementById('disp');
+        if(n == "+"){
+            div.innerHTML = (f*1) + (l*1) ;
+        }else if(n == "-"){
+            div.innerHTML = (f - l) ;
+        }else if(n == "X"){
+            div.innerHTML = (f * l) ;
+        }else if(n == "/"){
+            div.innerHTML = (f / l) ;
+        }
+    }
+</script>
+<input type="text" id="Fnum">
+<select name="Cal" id="Cal">
+    <option value="+" id="+">+</option>
+    <option value="-" id="-">-</option>
+    <option value="X" id="X">X</option>
+    <option value="/" id="/">/</option>
+</select>
+<input type="text" id="Lnum">
+<button onclick="Calculate(Cal.value,Fnum.value,Lnum.value)"> = </button><br>
+<div id="disp"></div>

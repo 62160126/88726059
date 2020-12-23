@@ -1,0 +1,10 @@
+<script>
+ 
+    function text(n) {
+        div = document.getElementById('disp');
+        div.innerHTML = "Hello " + n;
+    }
+</script>
+
+<input type="text" onkeyup="text(this.value);">
+<div id="disp"></div>

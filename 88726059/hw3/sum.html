@@ -1,0 +1,25 @@
+<script>
+    function Sum(F,L) {
+
+        div = document.getElementById('disp');
+        div.innerHTML = "";
+        sum = 0;
+        for (i = (F*1); i <= (L*1); i++) {
+            if(i < L){
+                div.innerHTML += i + " + ";
+            }else{
+                div.innerHTML += i + " = ";
+            }
+            sum = sum + i;
+            if( i == L){
+                div.innerHTML += sum;
+            }
+        }
+    }
+</script>
+
+<input type="text" id="Fnum">
+<b>-</b>
+<input type="text" id="Lnum">
+<button onclick="Sum(Fnum.value,Lnum.value)">Summary</button>
+<div id="disp"></div>
