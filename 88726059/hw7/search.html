@@ -1,0 +1,63 @@
+</style>
+<body>
+    <h4>Search</h4>
+    <title>Search</title>
+    <input type="text" id="kw">
+    <button onclick="search()">Search</button>
+    <form method="post" action="search2.php">
+        <input type="submit" value="Advance Search">
+    </form>
+    <table>
+        <tr>
+            <td  id="disp"></td>
+        </tr>
+    </table> 
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>CSS</title>
+        <link rel="stylesheet" type="text/css" href="css/mystyle.css">
+       </head>  
+</body>
+
+<script>
+    function search() {
+        kw = document.getElementById('kw').value;
+        var typ = 0;
+        console.log("kw=" + kw);
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                // document.getElementById('disp').innerHTML = this.responseText;
+                arr = JSON.parse(this.responseText);
+                console.log(arr);
+                if (arr.length == 0) {
+                    document.getElementById('disp').innerHTML = "Not found";
+                } else {
+                    html = "";
+                    for (i = 0; i < arr.length; i++) {
+                        html += "MusicName :"+arr[i].Name_song  +"<br>AlbumName :" + arr[i].Album_Name+ "<br><hr>";
+                    }
+                    document.getElementById('disp').innerHTML = html;
+                }
+            }
+        }
+        parameters = "kw=" + kw + "&typ=" + typ;
+        xmlhttp.open("post", "search.php");
+        xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xmlhttp.send(parameters);
+    }
+</script>
+
+
+
+
+
+
+
+
+<!-- <form method="post" action="search.php">
+    <input type="text" name="kw" id="kw">
+    <input type="submit" value="Search">
+</form> -->

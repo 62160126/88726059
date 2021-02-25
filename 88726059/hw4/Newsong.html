@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Add new song</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <style>
+        /* Make the image fully responsive */
+        .carousel-inner img {
+
+          width: 100%;
+          height: 100%;
+        }
+        .black {
+              font-size: 1.5em;
+              color: rgb(0, 0, 0);
+              font-weight: bold;
+            }
+            .orange {
+              font-size: 1.5em;
+              color: rgb(226, 91, 238);
+              font-weight: bold;
+            }
+        </style>
+    <title>Add new song</title>
+</head>
+<body>
+    <div id="demo" class="carousel slide" data-ride="carousel">
+
+        <!-- Indicators -->
+        <ul class="carousel-indicators">
+          <li data-target="#demo" data-slide-to="0" class="active"></li>
+          <li data-target="#demo" data-slide-to="1"></li>
+          <li data-target="#demo" data-slide-to="2"></li>
+        </ul>
+        
+        <!-- The slideshow -->
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://thetechgears.com/wp-content/uploads/2013/06/sing-or-hum-a-song-and-search-1.png" alt="P1" width="900" height="300">
+          </div>
+          <div class="carousel-item">
+            <img src="https://miro.medium.com/max/700/0*ukTx-2A5jMNtyMcw.jpg" alt="P2" width="900" height="300">
+          </div>
+          <div class="carousel-item">
+            <img src="https://thetechgears.com/wp-content/uploads/2015/09/Best-apps-for-Music-Identification-or-Reverse-song-search-1.png" alt="P3" width="900" height="300">
+          </div>
+        </div>
+        
+        <!-- Left and right controls -->
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </a>
+      </div>
+
+<h1>Add new song</h1><a href="Searchsong.html"><p style="font-size:20px">[Search Music]</a></p><hr/>
+<input type="text" id="name" placeholder="ชื่อเพลง"><br><br>
+<input type="text" id="artist" placeholder="ศิลปิน"><br><br>
+<textarea id="lyrics" rows="10" cols="90" placeholder="เนื้อร้อง"></textarea><br>
+<button onclick="Add()" >Save</button>
+<button onclick="Clear()" >Clear Form</button>
+
+<script>
+function Add() {
+    a = localStorage.getItem('a');
+    if(a === null){
+      a = [];
+    }else{
+      a = JSON.parse(a);
+    }
+    item = [
+        name = document.getElementById("name").value,
+        artist = document.getElementById("artist").value,
+        lyrics = document.getElementById("lyrics").value
+    ];
+    a.push(item);
+
+    localStorage.setItem("a", JSON.stringify(a));
+    document.getElementById("name").value = ""
+    document.getElementById("artist").value = ""
+    document.getElementById("lyrics").value = ""
+
+
+}
+function Clear() {
+    document.getElementById("name").value = ""
+    document.getElementById("artist").value = ""
+    document.getElementById("lyrics").value = ""
+}
+</script>
+</body>
+</html>
